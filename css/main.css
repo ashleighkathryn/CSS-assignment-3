@@ -8,21 +8,32 @@ html {
     box-sizing: inherit; /* keep */
 }
 body {
-    font-family: sans-serif;
+    font-family: 'Cormorant Garamond', "Times New Roman" ,serif;
     background: #5598b2; /* keep */
     color: #333; /* keep */
     margin: 0; /* keep */
 }
-h1, h2 {
-    font-family: serif;
+h1{
+    font-family: 'Anton', Arial, sans-serif;
+    text-align: center;
+    font-size: 400%;
 }
+
 #tagline {
     font-style: italic;
+    text-align: center;
+    font-size: 200%;
+}
+h2 {
+    font-family: 'Anton', Arial, sans-serif;
 }
 /* all images will stretch to fill their containing element */
 img {
     display: block; /* keep */
     width: 100%; /* keep */
+}
+
+section {max-width: 100%;
 }
 
 /* In the grid container below, you will change the columns,
@@ -37,11 +48,16 @@ img {
     max-width: 1280px; /* keep */
     margin: auto; /* keep */
     display: grid; /* keep */
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(5, auto);
+    grid-template-rows: repeat(6, auto);
     grid-template-areas:
-        "header arial georgia pairing bobwhite-quail"
-        "readability line-length helvetica typeface footer";
+        "header header header header header"
+        "pairing pairing pairing arial georgia"
+        "bobwhite-quail bobwhite-quail readability readability readability"
+        "bobwhite-quail bobwhite-quail line-length line-length line-length"
+        "typeface typeface typeface helvetica helvetica"
+        "footer footer footer footer footer";
+
 }
 
 /* all grid items -
@@ -53,39 +69,60 @@ img {
 header {
     grid-area: header; /* keep */
     background: #fff; /* keep */
+    margin:0;
+
 }
 #arial {
     grid-area: arial; /* keep */
     background: #a8e8ff; /* keep */
+    padding: 60px 6px 20px 20px;
+
 }
 #georgia {
     grid-area: georgia; /* keep */
     background: #a8e8ff; /* keep */
+    padding:60px 12px 20px 6px;
 }
 #pairing {
     grid-area: pairing; /* keep */
     background: #a8e8ff; /* keep */
+    margin:0;
+    padding: 60px 10px 20px 40px;
+    font-size: 160%;
 }
 #bobwhite-quail {
     grid-area: bobwhite-quail; /* keep */
     background: #d2f4ff; /* keep */
+    padding: 60px 20px 20px 60px;
 }
 #readability {
     grid-area: readability; /* keep */
     background: #d2f4ff; /* keep */
+    padding: 40px 40px 10px 40px;
+    font-size: 120%;
 }
 #line-length {
     grid-area: line-length; /* keep */
     background: #d2f4ff; /* keep */
+    padding:5px 40px 40px 40px;
+    font-size: 120%;
 }
 #helvetica {
     grid-area: helvetica; /* keep */
     background: #fff; /* keep */
+    padding:20px 20px 20px 20px;
+    margin-top:60px;
+    margin-right:40px;
+    margin-bottom:auto;
+    margin-left:20px;
 }
 #typeface {
     grid-area: typeface; /* keep */
     color: #d2f4ff; /* keep */
     background: #5598b2; /* keep */
+    padding: 40px 10px 40px 60px;
+    font-size: 120%;
+    text-shadow: .09em .09em #000;
 }
 footer {
     grid-area: footer; /* keep */
@@ -105,3 +142,9 @@ a:hover {
 }
 
 /* media queries below - only 1 is needed */
+
+@media screen and (max-width: 920px){
+    #container{
+                grid-template-columns: repeat(5, auto);
+              }
+}
